@@ -1,20 +1,31 @@
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class BaseDeDatos {
 
     private Connection conexion;
 
-    public Connection getConexion() {
+    private Connection getConexion() {
         return conexion;
     }
 
-    public void setConexion(Connection conexion) {
+    private void setConexion(Connection conexion) {
         this.conexion = conexion;
     }
 
     public BaseDeDatos conectar() {
         try {
-            Class.forName("org.postgresql.Drive");
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+
+                System.out.println("Where is your PostgreSQL JDBC Driver? "
+                        + "Include in your library path!");
+                e.printStackTrace();
+            }
             final String DB_URL = "jdbc:postgresql//localhost/bdCantina";
             // usuario y contraseña de la base de datos
             final String USER = "root";
