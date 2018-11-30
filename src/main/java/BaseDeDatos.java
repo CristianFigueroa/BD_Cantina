@@ -14,8 +14,8 @@ public class BaseDeDatos {
 
     public BaseDeDatos conectar() {
         try {
-            Class.forName("org.mariadb.jdbc.Driver");
-            final String DB_URL = "jdbc:mariadb://localhost/bdCantina";
+            Class.forName("org.postgresql.Drive");
+            final String DB_URL = "jdbc:postgresql//localhost/bdCantina";
             // usuario y contraseña de la base de datos
             final String USER = "root";
             final String PASS = "shippuden1";
