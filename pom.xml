@@ -69,12 +69,7 @@
             <scope>test</scope>
         </dependency>
         <!-- for LiftConsole -->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-compiler</artifactId>
-            <version>${scala.version}</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <build>
